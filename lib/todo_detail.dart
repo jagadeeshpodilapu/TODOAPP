@@ -30,7 +30,8 @@ class TodoDetailState extends State<TodoDetail> {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle textStyle = Theme.of(context).textTheme.title;
+
+    TextStyle textStyle = Theme.of(context).textTheme.title; // ignore: deprecated_member_use
 
     titleController.text = todo.title;
     descriptionController.text = todo.description;
@@ -58,10 +59,9 @@ class TodoDetailState extends State<TodoDetail> {
                     controller: titleController,
                     style: textStyle,
                     onChanged: (value) {
-                      if (value.isEmpty) {
-                      } else {
+
                         updateTitle();
-                      }
+
                     },
                     decoration: InputDecoration(
                       labelText: 'Title',
@@ -78,10 +78,9 @@ class TodoDetailState extends State<TodoDetail> {
                     controller: descriptionController,
                     style: textStyle,
                     onChanged: (value) {
-                      if (value.isEmpty) {
-                      } else {
+
                         updateDescription();
-                      }
+
                     },
                     decoration: InputDecoration(
                         labelText: 'Description',
