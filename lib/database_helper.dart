@@ -34,7 +34,7 @@ class DatabaseHelper {
   }
 
   Future<Database> initializeDatabase() async {
-    // Get the directory path for both Android and iOS to store database.
+    // Get the directory path  to store database.
     Directory directory = await getApplicationDocumentsDirectory();
     String path = directory.path + 'todos.db';
 
@@ -53,7 +53,7 @@ class DatabaseHelper {
   Future<List<Map<String, dynamic>>> getTodoMapList() async {
     Database db = await this.database;
 
-//		var result = await db.rawQuery('SELECT * FROM $todoTable order by $colTitle ASC');
+
     var result = await db.query(todoTable, orderBy: '$colTitle ASC');
     return result;
   }

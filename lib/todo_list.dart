@@ -50,9 +50,9 @@ class TodoListState extends State<TodoList> {
           elevation: 2.0,
           child: ListTile(
             leading: CircleAvatar(
-              backgroundColor: Colors.amber,
+              backgroundColor: Colors.black,
               child: Text(getFirstLetter(this.todoList[position].title),
-                  style: TextStyle(fontWeight: FontWeight.bold)),
+                  style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white)),
             ),
             title: Text(this.todoList[position].title,
                 style: TextStyle(fontWeight: FontWeight.bold)),
